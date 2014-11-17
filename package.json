@@ -1,0 +1,37 @@
+{
+  "name": "jsdoctest",
+  "version": "1.0.0",
+  "description": "Run jsdoc examples as doctests",
+  "main": "lib/index.js",
+  "bin": "bin/jsdoctest",
+  "scripts": {
+    "bin": "./bin/jsdoctest",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yamadapc/jsdoctest.git"
+  },
+  "keywords": [
+    "test",
+    "jsdoc",
+    "doctests",
+    "testing",
+    "workflow"
+  ],
+  "author": "Pedro Tacla Yamada",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yamadapc/jsdoctest/issues"
+  },
+  "homepage": "https://github.com/yamadapc/jsdoctest",
+  "dependencies": {
+    "commander": "^2.5.0",
+    "dox": "^0.5.3",
+    "lodash": "^2.4.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.0.1",
+    "should": "^4.3.0"
+  }
+}
