@@ -19,7 +19,7 @@
     "testing",
     "workflow"
   ],
-  "author": "Pedro Tacla Yamada",
+  "author": "Pedro Tacla Yamada <tacla.yamada@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/yamadapc/jsdoctest/issues"
