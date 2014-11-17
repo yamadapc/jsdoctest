@@ -1,5 +1,7 @@
 jsdoctest
 =========
+[![Stories in Ready](https://badge.waffle.io/yamadapc/jsdoctest.svg?label=ready&title=Ready)](http://waffle.io/yamadapc/jsdoctest)
+- - -
 *Though this is an initial working version, it's a really hacky and bad
 implementation, meant as a proof-of-concept. I'm just putting it online to be on
 SVC and push the implementation forward.*
