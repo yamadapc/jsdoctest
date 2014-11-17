@@ -6,6 +6,8 @@ jsdoctest
 implementation, meant as a proof-of-concept. I'm just putting it online to be on
 SVC and push the implementation forward.*
 
+![demo](/jsdoctest-demo.gif)
+
 Parses [`jsdoc`](http://usejsdoc.org/) `@example` tags from annotated functions
 and runs them as if they were doctests.
 
