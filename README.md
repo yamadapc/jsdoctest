@@ -15,6 +15,17 @@ Inspired by the [doctest](https://docs.python.org/2/library/doctest.html) python
 library, as well as its [doctestjs](http://doctestjs.org) javascript
 implementation.
 
+## Set-up
+Here's a two line set-up you can use:
+```bash
+$ npm i -g jsdoctest && jsdoctest --init
+Adding `jsdoctest` script to your package.json...
+Installing `mocha` and `jsdoctest` with npm:
+# ... npm doing some work...
+You can now run doctests with `npm run jsdoctest` or `npm test`
+```
+This will add sensible defaults to your `package.json` which you can then edit.
+
 ## Usage
 The recommended way of using jsdoctest is to use it
 [`mocha`](https://github.com/mochajs/mocha). That is made possible with:
