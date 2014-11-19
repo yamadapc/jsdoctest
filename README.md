@@ -1,6 +1,12 @@
 jsdoctest
 =========
+[![Build Status](https://travis-ci.org/yamadapc/jsdoctest.svg)](https://travis-ci.org/yamadapc/jsdoctest)
+[![Coverage Status](https://coveralls.io/repos/yamadapc/jsdoctest/badge.png)](https://coveralls.io/r/yamadapc/jsdoctest)
 [![Stories in Ready](https://badge.waffle.io/yamadapc/jsdoctest.svg?label=ready&title=Ready)](http://waffle.io/yamadapc/jsdoctest)
+[![Dependency Status](https://david-dm.org/yamadapc/jsdoctest.svg)](https://david-dm.org/yamadapc/jsdoctest)
+[![devDependency Status](https://david-dm.org/yamadapc/jsdoctest/dev-status.svg)](https://david-dm.org/yamadapc/jsdoctest#info=devDependencies)
+[![npm downloads](http://img.shields.io/npm/dm/localeval.svg)](https://www.npmjs.org/package/jsdoctest)
+[![npm version](http://img.shields.io/npm/v/npm.svg)](https://www.npmjs.org/package/jsdoctest)
 - - -
 *Though this is an initial working version, it's a really hacky and bad
 implementation, meant as a proof-of-concept. I'm just putting it online to be on
@@ -39,6 +45,11 @@ There's also a rudimentary command-line interface, which can be ran with:
 npm i jsdoctest
 jsdoctest <module-name>
 ```
+
+## Disabling
+To disable running jsdoctests, while still requiring it with `mocha` (I don't
+know why, but you may) you can set the `JSDOCTEST_DISABLE` environment variable
+to anything (`JSDOCTEST_DISABLE=true mocha --requre...`).
 
 ## License
 This code is licensed under the MIT license for Pedro Tacla Yamada. For more
