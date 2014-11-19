@@ -6,7 +6,8 @@
   "bin": "bin/jsdoctest",
   "scripts": {
     "bin": "./bin/jsdoctest",
-    "test": "mocha"
+    "test": "JSDOCTEST_DISABLE=true mocha --require blanket -R mocha-spec-cov-alt",
+    "coverage": "JSDOCTEST_DISABLE=true mocha --require blanket -R html-cov > coverage.html"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,23 @@
     "should": "^4.3.0"
   },
   "devDependencies": {
-    "mocha": "^2.0.1"
+    "blanket": "^1.1.6",
+    "mocha": "^2.0.1",
+    "mocha-spec-cov-alt": "^0.2.3"
+  },
+  "config": {
+    "blanket": {
+      "data-cover-never": [
+        "node_modules"
+      ],
+      "pattern": [
+        "lib",
+        "bin"
+      ],
+      "spec-cov": {
+        "threshold": 70,
+        "lcovOutput": "lcov"
+      }
+    }
   }
 }
