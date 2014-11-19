@@ -2,7 +2,7 @@
 require('should');
 var commentParser = require('../lib/comment-parser');
 
-describe('comment-parser', function() {
+describe('jsdoctest/comment-parser', function() {
   describe('.parseComments(input)', function() {
     it('differentiates code blocks from comments', function() {
       commentParser.parseComments(
