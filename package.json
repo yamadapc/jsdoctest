@@ -29,6 +29,7 @@
   "dependencies": {
     "commander": "^2.5.0",
     "dox": "^0.5.3",
+    "js-beautify": "^1.5.4",
     "lodash": "^2.4.1",
     "should": "^4.3.0"
   },
