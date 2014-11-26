@@ -32,6 +32,46 @@ You can now run doctests with `npm run jsdoctest` or `npm test`
 ```
 This will add sensible defaults to your `package.json` which you can then edit.
 
+## Test-case Format
+Examples need to be valid javascript, followed by a comment with the string
+` => ` prefixing the results:
+```javascript
+/**
+ * @example
+ *   returns10()
+ *   // => 10
+ *   returns20()
+ *   // => 20
+ */
+```
+
+It doesn't matter if the comment is on the same line or the next one, so the
+following is also valid:
+```javascript
+/**
+ * @example
+ *   returns10() // => 10
+ *   returns20()
+ *   // => 20
+ */
+```
+
+**Async test cases** are supported prefixing the expected results with the
+` async => ` string and pretending to have the `cb` callback function.
+```javascript
+/**
+ * @example
+ *   takesCallbackAndYields10('here', cb)
+ *   // async => 10
+ *   takesCallbackAndYields20('here', cb)
+ *   // async => 30
+ */
+```
+
+## Examples
+The [examples](/examples) directory has a couple of examples, which may be
+useful. Better documentation will be added if the project raises in complexity.
+
 ## Usage
 The recommended way of using jsdoctest is to use it
 [`mocha`](https://github.com/mochajs/mocha). That is made possible with:
