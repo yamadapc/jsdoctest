@@ -17,7 +17,7 @@ describe('jsdoctest/mocha', function() {
         content.should.containEql(
         '\ndescribe(\'add()\', function() {' +
             'it(\'add(1, 2)\', function() {' +
-              'add(1, 2).should.eql(3);' +
+              '(add(1, 2)).should.eql(3);' +
             '});' +
           '});'
         );
