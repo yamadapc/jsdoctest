@@ -32,5 +32,17 @@ describe('jsdoctest/comment-parser', function() {
         { testCase: 'b()', expectedResult: '20', },
       ]);
     });
+
+    it('handles multiple line examples', function() {
+      commentParser.parseExamples(commentParser.parseComments(
+        'map([1, 2, 3], function(x) {\n' +
+        '  return x + 10\n'  +
+        '});\n' +
+        '// => [11, 12, 13]'
+      )).should.eql([
+        { testCase: 'map([1, 2, 3], function(x) {; return x + 10;})',
+          expectedResult: '[11, 12, 13]', },
+      ]);
+    });
   });
 });
