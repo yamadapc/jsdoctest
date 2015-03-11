@@ -8,10 +8,6 @@ jsdoctest
 [![npm downloads](http://img.shields.io/npm/dm/jsdoctest.svg)](https://www.npmjs.org/package/jsdoctest)
 [![npm version](http://img.shields.io/npm/v/jsdoctest.svg)](https://www.npmjs.org/package/jsdoctest)
 - - -
-*Though this is an initial working version, it's a really hacky and bad
-implementation, meant as a proof-of-concept. I'm just putting it online to be on
-SVC and push the implementation forward.*
-
 ![demo](/jsdoctest-demo.gif)
 
 Parses [`jsdoc`](http://usejsdoc.org/) `@example` tags from annotated functions
