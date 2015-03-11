@@ -1,5 +1,9 @@
 'use strict';
 /**
+ * @module {CommonJS} add-example
+ */
+
+/**
  * Adds two numbers
  *
  * @param {Number} x
