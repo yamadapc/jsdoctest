@@ -27,16 +27,16 @@
   },
   "homepage": "https://github.com/yamadapc/jsdoctest",
   "dependencies": {
-    "commander": "^2.5.0",
-    "dox": "^0.5.3",
+    "commander": "^2.8.1",
+    "dox": "^0.8",
     "js-beautify": "^1.5.4",
-    "lodash": "^2.4.1",
-    "should": "^4.3.0"
+    "lodash": "^3.10",
+    "should": "^7.0.1"
   },
   "devDependencies": {
-    "blanket": "^1.1.6",
-    "mocha": "^2.0.1",
-    "mocha-spec-cov-alt": "^0.2.3"
+    "blanket": "^1.1.7",
+    "mocha": "^2.2",
+    "mocha-spec-cov-alt": ">=0.2.5"
   },
   "config": {
     "blanket": {
