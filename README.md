@@ -85,7 +85,7 @@ jsdoctest <module-name>
 ## Disabling
 To disable running jsdoctests, while still requiring it with `mocha` (I don't
 know why, but you may) you can set the `JSDOCTEST_DISABLE` environment variable
-to anything (`JSDOCTEST_DISABLE=true mocha --requre...`).
+to anything (`JSDOCTEST_DISABLE=true mocha --require...`).
 
 ## License
 This code is licensed under the MIT license for Pedro Tacla Yamada. For more
