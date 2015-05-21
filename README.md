@@ -69,7 +69,7 @@ The [examples](/examples) directory has a couple of examples, which may be
 useful. Better documentation will be added if the project raises in complexity.
 
 ## Usage
-The recommended way of using jsdoctest is to use it
+The recommended way of using jsdoctest is to use
 [`mocha`](https://github.com/mochajs/mocha). That is made possible with:
 ```bash
 npm i mocha jsdoctest
