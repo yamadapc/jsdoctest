@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>jsdoctest by yamadapc</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">jsdoctest</h1>
+      <h2 class="project-tagline">Run jsdoc examples as doctests.</h2>
+      <a href="https://github.com/yamadapc/jsdoctest" class="btn">View on GitHub</a>
+      <a href="https://github.com/yamadapc/jsdoctest/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/yamadapc/jsdoctest/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="jsdoctest" class="anchor" href="#jsdoctest" aria-hidden="true"><span class="octicon octicon-link"></span></a>jsdoctest</h1>
+
+<p><a href="https://travis-ci.org/yamadapc/jsdoctest"><img src="https://travis-ci.org/yamadapc/jsdoctest.svg" alt="Build Status"></a>
+<a href="https://coveralls.io/r/yamadapc/jsdoctest"><img src="https://coveralls.io/repos/yamadapc/jsdoctest/badge.png" alt="Coverage Status"></a>
+<a href="http://waffle.io/yamadapc/jsdoctest"><img src="https://badge.waffle.io/yamadapc/jsdoctest.svg?label=ready&amp;title=Ready" alt="Stories in Ready"></a>
+<a href="https://david-dm.org/yamadapc/jsdoctest"><img src="https://david-dm.org/yamadapc/jsdoctest.svg" alt="Dependency Status"></a>
+<a href="https://david-dm.org/yamadapc/jsdoctest#info=devDependencies"><img src="https://david-dm.org/yamadapc/jsdoctest/dev-status.svg" alt="devDependency Status"></a>
+<a href="https://www.npmjs.org/package/jsdoctest"><img src="http://img.shields.io/npm/dm/jsdoctest.svg" alt="npm downloads"></a>
+<a href="https://www.npmjs.org/package/jsdoctest"><img src="http://img.shields.io/npm/v/jsdoctest.svg" alt="npm version"></a></p>
+
+<hr>
+
+<p><img src="/jsdoctest-demo.gif" alt="demo"></p>
+
+<p>Parses <a href="http://usejsdoc.org/"><code>jsdoc</code></a> <code>@example</code> tags from annotated functions
+and runs them as if they were doctests.</p>
+
+<p>Inspired by the <a href="https://docs.python.org/2/library/doctest.html">doctest</a> python
+library, as well as its <a href="http://doctestjs.org">doctestjs</a> javascript
+implementation.</p>
+
+<h2>
+<a id="set-up" class="anchor" href="#set-up" aria-hidden="true"><span class="octicon octicon-link"></span></a>Set-up</h2>
+
+<p>Here's a two line set-up you can use:</p>
+
+<div class="highlight highlight-bash"><pre>$ npm i -g jsdoctest <span class="pl-k">&amp;&amp;</span> jsdoctest --init
+Adding <span class="pl-s"><span class="pl-pds">`</span>jsdoctest<span class="pl-pds">`</span></span> script to your package.json...
+Installing <span class="pl-s"><span class="pl-pds">`</span>mocha<span class="pl-pds">`</span></span> and <span class="pl-s"><span class="pl-pds">`</span>jsdoctest<span class="pl-pds">`</span></span> with npm:
+<span class="pl-c"># ... npm doing some work...</span>
+You can now run doctests with <span class="pl-s"><span class="pl-pds">`</span>npm run jsdoctest<span class="pl-pds">`</span></span> or <span class="pl-s"><span class="pl-pds">`</span>npm <span class="pl-c1">test</span><span class="pl-pds">`</span></span></pre></div>
+
+<p>This will add sensible defaults to your <code>package.json</code> which you can then edit.</p>
+
+<h2>
+<a id="test-case-format" class="anchor" href="#test-case-format" aria-hidden="true"><span class="octicon octicon-link"></span></a>Test-case Format</h2>
+
+<p>Examples need to be valid javascript, followed by a comment with the string
+<code>=&gt;</code> prefixing the results:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-c">/**</span>
+<span class="pl-c"> * <span class="pl-k">@example</span></span>
+<span class="pl-c"> *   returns10()</span>
+<span class="pl-c"> *   // =&gt; 10</span>
+<span class="pl-c"> *   returns20()</span>
+<span class="pl-c"> *   // =&gt; 20</span>
+<span class="pl-c"> */</span></pre></div>
+
+<p>It doesn't matter if the comment is on the same line or the next one, so the
+following is also valid:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-c">/**</span>
+<span class="pl-c"> * <span class="pl-k">@example</span></span>
+<span class="pl-c"> *   returns10() // =&gt; 10</span>
+<span class="pl-c"> *   returns20()</span>
+<span class="pl-c"> *   // =&gt; 20</span>
+<span class="pl-c"> */</span></pre></div>
+
+<p><strong>Async test cases</strong> are supported prefixing the expected results with the
+<code>async =&gt;</code> string and pretending to have the <code>cb</code> callback function.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-c">/**</span>
+<span class="pl-c"> * <span class="pl-k">@example</span></span>
+<span class="pl-c"> *   takesCallbackAndYields10('here', cb)</span>
+<span class="pl-c"> *   // async =&gt; 10</span>
+<span class="pl-c"> *   takesCallbackAndYields20('here', cb)</span>
+<span class="pl-c"> *   // async =&gt; 30</span>
+<span class="pl-c"> */</span></pre></div>
+
+<h2>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<p>The <a href="/examples">examples</a> directory has a couple of examples, which may be
+useful. Better documentation will be added if the project raises in complexity.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>The recommended way of using jsdoctest is to use it
+<a href="https://github.com/mochajs/mocha"><code>mocha</code></a>. That is made possible with:</p>
+
+<div class="highlight highlight-bash"><pre>npm i mocha jsdoctest
+mocha --require jsdoctest <span class="pl-k">&lt;</span>module-name<span class="pl-k">&gt;</span></pre></div>
+
+<p>There's also a rudimentary command-line interface, which can be ran with:</p>
+
+<div class="highlight highlight-bash"><pre>npm i jsdoctest
+jsdoctest <span class="pl-k">&lt;</span>module-name<span class="pl-k">&gt;</span></pre></div>
+
+<h2>
+<a id="disabling" class="anchor" href="#disabling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Disabling</h2>
+
+<p>To disable running jsdoctests, while still requiring it with <code>mocha</code> (I don't
+know why, but you may) you can set the <code>JSDOCTEST_DISABLE</code> environment variable
+to anything (<code>JSDOCTEST_DISABLE=true mocha --require...</code>).</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>This code is licensed under the MIT license for Pedro Tacla Yamada. For more
+information, please refer to the <a href="/LICENSE">LICENSE</a> file.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/yamadapc/jsdoctest">jsdoctest</a> is maintained by <a href="https://github.com/yamadapc">yamadapc</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-54450544-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
+
