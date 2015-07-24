@@ -65,6 +65,18 @@ following is also valid:
  */
 ```
 
+**Promises** are also supported, just add the same `// async =>` prefix and be
+sure not to use a variable named `cb` on your text expression.
+```javascript
+/**
+ * @example
+ *   returnsPromiseThatYields10('here')
+ *   // async => 10
+ */
+```
+
+**Currently async test cases are only supported when using `mocha`. See [#15](https://github.com/yamadapc/jsdoctest/issues/15)**
+
 ## Examples
 The [examples](/examples) directory has a couple of examples, which may be
 useful. Better documentation will be added if the project raises in complexity.
