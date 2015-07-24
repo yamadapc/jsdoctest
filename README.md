@@ -7,6 +7,7 @@ jsdoctest
 [![devDependency Status](https://david-dm.org/yamadapc/jsdoctest/dev-status.svg)](https://david-dm.org/yamadapc/jsdoctest#info=devDependencies)
 [![npm downloads](http://img.shields.io/npm/dm/jsdoctest.svg)](https://www.npmjs.org/package/jsdoctest)
 [![npm version](http://img.shields.io/npm/v/jsdoctest.svg)](https://www.npmjs.org/package/jsdoctest)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/yamadapc/jsdoctest?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 - - -
 ![demo](/jsdoctest-demo.gif)
 
