@@ -1,6 +1,7 @@
 <div style="text-align: center;">
-  <img alt="jsdoctest" src="/jsdoctest.png" />
+  <img alt="jsdoctest" src="/jsdoctest.png" style="max-width: 250px;" />
 </div>
+- - -
 [![Build Status](https://travis-ci.org/yamadapc/jsdoctest.svg)](https://travis-ci.org/yamadapc/jsdoctest)
 [![Coverage Status](https://coveralls.io/repos/yamadapc/jsdoctest/badge.png)](https://coveralls.io/r/yamadapc/jsdoctest)
 [![Stories in Ready](https://badge.waffle.io/yamadapc/jsdoctest.svg?label=ready&title=Ready)](http://waffle.io/yamadapc/jsdoctest)
@@ -11,14 +12,16 @@
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/yamadapc/jsdoctest?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 - - -
 
-![demo](/jsdoctest-demo.gif)
-
 **jsdoctest** parses [`jsdoc`](http://usejsdoc.org/) `@example` tags from
 annotated functions and runs them as if they were doctests.
 
 Inspired by the [doctest](https://docs.python.org/2/library/doctest.html) python
 library, as well as its [doctestjs](http://doctestjs.org) javascript
 implementation.
+
+## Demo
+
+![demo](/jsdoctest-demo.gif)
 
 ## Set-up
 Here's a two line set-up you can use:
