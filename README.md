@@ -1,5 +1,5 @@
 <div style="text-align: center;">
-  <img alt="jsdoctest" src="/jsdoctest.png" style="max-width: 250px;" />
+  <img alt="jsdoctest" src="/jsdoctest.png" />
 </div>
 - - -
 [![Build Status](https://travis-ci.org/yamadapc/jsdoctest.svg)](https://travis-ci.org/yamadapc/jsdoctest)
