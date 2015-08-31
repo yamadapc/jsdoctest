@@ -1,15 +1,14 @@
 <p align="center">
   <img alt="jsdoctest" src="/jsdoctest.png" />
-  <br><br>
-  [![Build Status](https://travis-ci.org/yamadapc/jsdoctest.svg)](https://travis-ci.org/yamadapc/jsdoctest)
-  [![Coverage Status](https://coveralls.io/repos/yamadapc/jsdoctest/badge.png)](https://coveralls.io/r/yamadapc/jsdoctest)
-  [![Stories in Ready](https://badge.waffle.io/yamadapc/jsdoctest.svg?label=ready&title=Ready)](http://waffle.io/yamadapc/jsdoctest)
-  [![Dependency Status](https://david-dm.org/yamadapc/jsdoctest.svg)](https://david-dm.org/yamadapc/jsdoctest)
-  [![devDependency Status](https://david-dm.org/yamadapc/jsdoctest/dev-status.svg)](https://david-dm.org/yamadapc/jsdoctest#info=devDependencies)
-  [![npm downloads](http://img.shields.io/npm/dm/jsdoctest.svg)](https://www.npmjs.org/package/jsdoctest)
-  [![npm version](http://img.shields.io/npm/v/jsdoctest.svg)](https://www.npmjs.org/package/jsdoctest)
-  [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/yamadapc/jsdoctest?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 </p>
+[![Build Status](https://travis-ci.org/yamadapc/jsdoctest.svg)](https://travis-ci.org/yamadapc/jsdoctest)
+[![Coverage Status](https://coveralls.io/repos/yamadapc/jsdoctest/badge.png)](https://coveralls.io/r/yamadapc/jsdoctest)
+[![Stories in Ready](https://badge.waffle.io/yamadapc/jsdoctest.svg?label=ready&title=Ready)](http://waffle.io/yamadapc/jsdoctest)
+[![Dependency Status](https://david-dm.org/yamadapc/jsdoctest.svg)](https://david-dm.org/yamadapc/jsdoctest)
+[![devDependency Status](https://david-dm.org/yamadapc/jsdoctest/dev-status.svg)](https://david-dm.org/yamadapc/jsdoctest#info=devDependencies)
+[![npm downloads](http://img.shields.io/npm/dm/jsdoctest.svg)](https://www.npmjs.org/package/jsdoctest)
+[![npm version](http://img.shields.io/npm/v/jsdoctest.svg)](https://www.npmjs.org/package/jsdoctest)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/yamadapc/jsdoctest?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 - - -
 
 **jsdoctest** parses [`jsdoc`](http://usejsdoc.org/) `@example` tags from
