@@ -9,6 +9,11 @@ jsdoctest
 [![npm version](http://img.shields.io/npm/v/jsdoctest.svg)](https://www.npmjs.org/package/jsdoctest)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/yamadapc/jsdoctest?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 - - -
+
+<div style="text-align: center;">
+  <img src="/jsdoctest.png" />
+</div>
+
 ![demo](/jsdoctest-demo.gif)
 
 Parses [`jsdoc`](http://usejsdoc.org/) `@example` tags from annotated functions
