@@ -40,7 +40,7 @@ describe('jsdoctest/comment-parser', function() {
         '});\n' +
         '// => [11, 12, 13]'
       )).should.eql([
-        { testCase: 'map([1, 2, 3], function(x) {; return x + 10;})',
+        { testCase: 'map([1, 2, 3], function(x) {;  return x + 10;})',
           expectedResult: '[11, 12, 13]', },
       ]);
     });
