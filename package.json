@@ -34,7 +34,7 @@
     "should": "^8.2.1"
   },
   "devDependencies": {
-    "blanket": "1.1.7",
+    "blanket": "1.2.3",
     "bluebird": "^3.2.1",
     "mocha": "^2.4.5",
     "mocha-spec-cov-alt": "^1.1.0"
