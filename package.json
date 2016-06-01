@@ -34,6 +34,7 @@
     "should": "^8.2.1"
   },
   "devDependencies": {
+    "babel-register": "^6.9.0",
     "blanket": "1.1.7",
     "bluebird": "^3.2.1",
     "mocha": "^2.4.5",
