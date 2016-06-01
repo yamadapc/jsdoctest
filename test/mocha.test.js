@@ -28,7 +28,4 @@ describe('jsdoctest/mocha', function() {
       called.should.be.true;
     });
   });
-
-  describe('.toMochaSpec(commend)', function() {
-  });
 });
