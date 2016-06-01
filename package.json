@@ -37,7 +37,7 @@
     "blanket": "1.1.7",
     "bluebird": "^3.2.1",
     "mocha": "^2.4.5",
-    "mocha-spec-cov-alt": "^1.1.0"
+    "mocha-spec-cov-alt": "^1.1.1"
   },
   "config": {
     "blanket": {
