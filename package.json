@@ -1,6 +1,6 @@
 {
   "name": "jsdoctest",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Run jsdoc examples as doctests",
   "main": "lib/index.js",
   "bin": "bin/jsdoctest",
