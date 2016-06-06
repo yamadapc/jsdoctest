@@ -41,10 +41,10 @@ describe('jsdoctest/mocha', function() {
         '\ndescribe(\'add()\', function() {' +
             'it(\'add(1, 2) - Integers\', function() {' +
               '(add(1, 2)).should.eql(3);' +
-            '});' +
+            '});\n' +
             'it(\'add(3, 2) - Integers\', function() {' +
               '(add(3, 2)).should.eql(5);' +
-            '});' +
+            '});\n' +
             'it(\'add(1.5, 2.5) - Doubles\', function() {' +
               '(add(1.5, 2.5)).should.eql(4);' +
             '});' +
