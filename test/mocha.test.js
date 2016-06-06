@@ -27,5 +27,28 @@ describe('jsdoctest/mocha', function() {
 
       called.should.be.true;
     });
+
+    it('handles <caption>s in @example tags', function() {
+      var called = false;
+      var mockModule = {
+        _compile: onCompile
+      };
+
+      mocha.loadDoctests(mockModule, path.join(__dirname, 'test-file-captioned.js'));
+
+      function onCompile(content, filename) {
+        content.should.containEql(
+        '\ndescribe(\'add()\', function() {' +
+            'it(\'add(1, 2) - Testing\', function() {' +
+              '(add(1, 2)).should.eql(3);' +
+            '});' +
+          '});'
+        );
+        called = true;
+        filename.should.equal(path.join(__dirname, 'test-file-captioned.js'));
+      }
+
+      called.should.be.true;
+    });
   });
 });
