@@ -39,8 +39,14 @@ describe('jsdoctest/mocha', function() {
       function onCompile(content, filename) {
         content.should.containEql(
         '\ndescribe(\'add()\', function() {' +
-            'it(\'add(1, 2) - Testing\', function() {' +
+            'it(\'add(1, 2) - Integers\', function() {' +
               '(add(1, 2)).should.eql(3);' +
+            '});' +
+            'it(\'add(3, 2) - Integers\', function() {' +
+              '(add(3, 2)).should.eql(5);' +
+            '});' +
+            'it(\'add(1.5, 2.5) - Doubles\', function() {' +
+              '(add(1.5, 2.5)).should.eql(4);' +
             '});' +
           '});'
         );
