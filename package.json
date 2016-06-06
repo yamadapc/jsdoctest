@@ -31,7 +31,7 @@
     "dox": "^0.8",
     "js-beautify": "^1.5.4",
     "lodash": "^4.0.1",
-    "should": "^8.2.1"
+    "should": "^9.0.0"
   },
   "devDependencies": {
     "babel-register": "^6.9.0",
