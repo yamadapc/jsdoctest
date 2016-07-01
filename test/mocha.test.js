@@ -56,5 +56,26 @@ describe('jsdoctest/mocha', function() {
 
       called.should.be.true;
     });
+
+    it('handles complex examples', function() {
+      var called = false;
+      var mockModule = {
+        _compile: onCompile
+      };
+
+      mocha.loadDoctests(mockModule, path.join(__dirname, './complex-file.js'));
+
+      function onCompile(content, filename) {
+        content.should.containEql(
+          'it(\'createResource(1, 2)\', function() {' +
+            'return (createResource(1, 2).then).should.eql(3);' +
+          '});'
+        );
+        called = true;
+        filename.should.equal(path.join(__dirname, 'test-file-captioned.js'));
+      }
+
+      called.should.be.true;
+    });
   });
 });
