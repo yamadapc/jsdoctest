@@ -67,12 +67,12 @@ describe('jsdoctest/mocha', function() {
 
       function onCompile(content, filename) {
         content.should.containEql(
-          'it(\'createResource(1, 2)\', function() {' +
-            'return (createResource(1, 2).then).should.eql(3);' +
-          '});'
+          'var returnValue = createResource().then(() => {\n' +
+          '    return \'something else\'\n' +
+          '  });if(returnValue && returnValue.then && typeof returnValue.then === \'function\') {return returnValue.then(cb.bind(null, null), cb);}});'
         );
         called = true;
-        filename.should.equal(path.join(__dirname, 'test-file-captioned.js'));
+        filename.should.equal(path.join(__dirname, 'complex-file.js'));
       }
 
       called.should.be.true;

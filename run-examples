@@ -1,4 +1,21 @@
 #!/bin/bash -e
 for i in examples/*; do
-  mocha --require . $i
+  printf "$i..."
+  mocha --require . $i > /dev/null
+  ecode=$?
+  if [[ $i == *"failing"* ]] || [[ $i == *"explosive"* ]] ||
+      [[ $i == *"explode"* ]] || [[ $i == *"returns-promise"* ]]; then
+    if [[ $ecode == 0 ]]; then
+      echo "Failure: $i"
+      echo "Expected exitcode != 0, but saw $ecode"
+      exit 1
+    fi
+  else
+    if [[ $ecode != 0 ]]; then
+      echo "Failure: $i"
+      echo "Expected exitcode == 0, but saw $ecode"
+      exit 1
+    fi
+  fi
+  printf " ok\n"
 done

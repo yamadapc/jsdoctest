@@ -6,7 +6,7 @@
   "bin": "bin/jsdoctest",
   "scripts": {
     "bin": "./bin/jsdoctest",
-    "test": "JSDOCTEST_DISABLE=true mocha --require blanket -R mocha-spec-cov-alt",
+    "test": "JSDOCTEST_DISABLE=true mocha --require blanket -R mocha-spec-cov-alt && bash run-examples",
     "coverage": "JSDOCTEST_DISABLE=true mocha --require blanket -R html-cov > coverage.html"
   },
   "repository": {
@@ -31,7 +31,7 @@
     "dox": "^0.8",
     "js-beautify": "^1.5.4",
     "lodash": "^4.0.1",
-    "should": "^9.0.0"
+    "should": "^10.0.0"
   },
   "devDependencies": {
     "babel-register": "^6.9.0",

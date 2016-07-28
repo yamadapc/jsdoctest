@@ -29,7 +29,7 @@ describe('jsdoctest/comment-parser', function() {
         'b()\n' +
         '// => 20'
       )).should.eql([
-        { testCase: 'b()', expectedResult: '20', },
+        { displayTestCase: 'b()', testCase: 'b()', expectedResult: '20', },
       ]);
     });
 
@@ -40,8 +40,11 @@ describe('jsdoctest/comment-parser', function() {
         '});\n' +
         '// => [11, 12, 13]'
       )).should.eql([
-        { testCase: 'map([1, 2, 3], function(x) {;  return x + 10;})',
-          expectedResult: '[11, 12, 13]', },
+        {
+          displayTestCase: 'map([1, 2, 3], function(x) {;  return x + 10;})',
+          testCase: 'map([1, 2, 3], function(x) {\n  return x + 10\n})',
+          expectedResult: '[11, 12, 13]',
+        },
       ]);
     });
   });
