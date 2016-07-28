@@ -31,7 +31,8 @@
     "dox": "^0.8",
     "js-beautify": "^1.5.4",
     "lodash": "^4.0.1",
-    "should": "^10.0.0"
+    "should": "^10.0.0",
+    "uglifyjs": "^2.4.10"
   },
   "devDependencies": {
     "babel-register": "^6.9.0",
