@@ -79,8 +79,6 @@ sure not to use a variable named `cb` on your text expression.
  */
 ```
 
-**Currently async test cases are only supported when using `mocha`. See [#15](https://github.com/yamadapc/jsdoctest/issues/15)**
-
 ## Examples
 The [examples](/examples) directory has a couple of examples, which may be
 useful. Better documentation will be added if the project raises in complexity.
