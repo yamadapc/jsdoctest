@@ -38,7 +38,7 @@
     "babel-register": "^6.9.0",
     "blanket": "1.1.7",
     "bluebird": "^3.2.1",
-    "mocha": "^2.4.5",
+    "mocha": "^3.3.0",
     "mocha-spec-cov-alt": "^1.1.1"
   },
   "config": {
