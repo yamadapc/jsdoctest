@@ -47,5 +47,63 @@ describe('jsdoctest/comment-parser', function() {
         },
       ]);
     });
+
+    it('handles multiple line results', function() {
+      commentParser.parseExamples(commentParser.parseComments(
+        'map([1, 2, 3], function(x) {\n' +
+        '  return x + 10\n'  +
+        '});\n' +
+        '// => [\n' +
+        '// =>   11,\n' +
+        '// =>   12,\n' +
+        '// =>   13\n' +
+        '// => ]'
+      )).should.eql([
+        {
+          displayTestCase: 'map([1, 2, 3], function(x) {;  return x + 10;})',
+          testCase: 'map([1, 2, 3], function(x) {\n  return x + 10\n})',
+          expectedResult: '[  11,  12,  13]',
+        }
+      ])
+    });
+
+    it('ignores multiple line results if without arrow', function() {
+      commentParser.parseExamples(commentParser.parseComments(
+        'map([1, 2, 3], function(x) {\n' +
+        '  return x + 10\n'  +
+        '});\n' +
+        '// => [\n' +
+        '//      11,\n' +
+        '//      12,\n' +
+        '//      13\n' +
+        '// ]'
+      )).should.eql([
+        {
+          displayTestCase: 'map([1, 2, 3], function(x) {;  return x + 10;})',
+          testCase: 'map([1, 2, 3], function(x) {\n  return x + 10\n})',
+          expectedResult: '[',
+        }
+      ])
+    });
+
+    it('handles multiple line async results', function() {
+      commentParser.parseExamples(commentParser.parseComments(
+        'map([1, 2, 3], function(x) {\n' +
+        '  return x + 10\n'  +
+        '});\n' +
+        '// async => [\n' +
+        '// async =>   11,\n' +
+        '// async =>   12,\n' +
+        '// async =>   13\n' +
+        '// async => ]'
+      )).should.eql([
+        {
+          displayTestCase: 'map([1, 2, 3], function(x) {;  return x + 10;})',
+          testCase: 'map([1, 2, 3], function(x) {\n  return x + 10\n})',
+          expectedResult: '[  11,  12,  13]',
+          isAsync: true
+        }
+      ])
+    });
   });
 });
